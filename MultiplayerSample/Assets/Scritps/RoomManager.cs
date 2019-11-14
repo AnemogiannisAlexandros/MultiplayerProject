@@ -13,6 +13,7 @@ namespace MyMultiplayerProject
         [Tooltip("Maximum amount of players in the room")]
         [SerializeField]
         private byte maxPlayersPerRoom = 4;
+        bool isConnecting;
         string gameVersion = "0.0.0.0";
 
         [Tooltip("The Ui Panel to let the user enter name, connect and play")]
@@ -35,7 +36,7 @@ namespace MyMultiplayerProject
         {
             progressLabel.SetActive(true);
             controlPanel.SetActive(false);
-
+            isConnecting = true;
             if (PhotonNetwork.IsConnected)
             {
                 PhotonNetwork.JoinRandomRoom();
@@ -50,7 +51,10 @@ namespace MyMultiplayerProject
         {
             progressLabel.SetActive(false);
             Debug.Log("Pun Connected To ServerMaster");
-            PhotonNetwork.JoinRandomRoom();
+            if (isConnecting) 
+            {
+                PhotonNetwork.JoinRandomRoom();
+            }
         }
         public override void OnDisconnected(DisconnectCause cause)
         {
@@ -61,11 +65,18 @@ namespace MyMultiplayerProject
         public override void OnJoinRandomFailed(short returnCode, string message)
         {
             Debug.LogFormat("Join Random Room Failed. Creating new room");
-            PhotonNetwork.CreateRoom(null, new RoomOptions { MaxPlayers = maxPlayersPerRoom });
+            PhotonNetwork.CreateRoom("My Room", new RoomOptions { MaxPlayers = maxPlayersPerRoom });
         }
         public override void OnJoinedRoom()
         {
             Debug.LogFormat("Joined Room : {0}", PhotonNetwork.CurrentRoom.Name);
+
+            if (PhotonNetwork.CurrentRoom.PlayerCount == 1)
+            {
+                Debug.Log("we Load The First Room");
+                PhotonNetwork.LoadLevel("FirstRoom");
+            }
+
         }
     }
 }

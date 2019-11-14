@@ -5,42 +5,44 @@ using UnityEngine.SceneManagement;
 using Photon.Pun;
 using Photon.Realtime;
 
-
-public class GameManager : MonoBehaviourPunCallbacks
+namespace MyMultiplayerProject
 {
-    void LoadArena()
+    public class GameManager : MonoBehaviourPunCallbacks
     {
-        if (!PhotonNetwork.IsMasterClient)
+        void LoadArena()
         {
-            Debug.LogError("Not the Master Client");
+            if (!PhotonNetwork.IsMasterClient)
+            {
+                Debug.LogError("Not the Master Client");
+            }
+            Debug.LogFormat("Loading Level : {0}", PhotonNetwork.CurrentRoom.PlayerCount);
+            PhotonNetwork.LoadLevel("FirstRoom");
         }
-        Debug.LogFormat("Loading Level : {0}", PhotonNetwork.CurrentRoom.PlayerCount);
-        PhotonNetwork.LoadLevel("First Room");
-    }
-    public override void OnPlayerEnteredRoom(Player newPlayer)
-    {
-        Debug.LogFormat("OnPlayerEneteredRoom : {0}", newPlayer.NickName);
-        if (PhotonNetwork.IsMasterClient)
+        public override void OnPlayerEnteredRoom(Player newPlayer)
         {
-            Debug.LogFormat("Master Client is ", newPlayer.NickName);
-            LoadArena();
+            Debug.LogFormat("OnPlayerEneteredRoom : {0}", newPlayer.NickName);
+            if (PhotonNetwork.IsMasterClient)
+            {
+                Debug.LogFormat("Master Client is ", newPlayer.NickName);
+                LoadArena();
+            }
         }
-    }
-    public override void OnPlayerLeftRoom(Player otherPlayer)
-    {
-        Debug.LogFormat("OnPlayerLeftRoom : {0}", otherPlayer.NickName);
-        if (PhotonNetwork.IsMasterClient)
+        public override void OnPlayerLeftRoom(Player otherPlayer)
         {
-            Debug.LogFormat("MasterClient Left : {0}", PhotonNetwork.IsMasterClient);
-            LoadArena();
+            Debug.LogFormat("OnPlayerLeftRoom : {0}", otherPlayer.NickName);
+            if (PhotonNetwork.IsMasterClient)
+            {
+                Debug.LogFormat("MasterClient Left : {0}", PhotonNetwork.IsMasterClient);
+                LoadArena();
+            }
         }
-    }
-    public override void OnLeftRoom()
-    {
-        SceneManager.LoadScene(0);
-    }
-    public void LeaveRoom()
-    {
-        PhotonNetwork.LeaveRoom();
+        public override void OnLeftRoom()
+        {
+            SceneManager.LoadScene(0);
+        }
+        public void LeaveRoom()
+        {
+            PhotonNetwork.LeaveRoom();
+        }
     }
 }
