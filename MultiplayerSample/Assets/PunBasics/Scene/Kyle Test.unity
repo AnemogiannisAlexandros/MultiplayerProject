@@ -426,6 +426,16 @@ PrefabInstance:
       propertyPath: viewIdField
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2057507316899160438, guid: ec6f9de6ea86ca242be650652b58abab,
+        type: 3}
+      propertyPath: OwnershipTransfer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2057507316899160438, guid: ec6f9de6ea86ca242be650652b58abab,
+        type: 3}
+      propertyPath: Synchronization
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2018433017839176380, guid: ec6f9de6ea86ca242be650652b58abab,
         type: 3}
       propertyPath: beams

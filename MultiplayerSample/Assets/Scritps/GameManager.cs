@@ -7,8 +7,16 @@ using Photon.Realtime;
 
 namespace MyMultiplayerProject
 {
+
     public class GameManager : MonoBehaviourPunCallbacks
     {
+        public static GameManager Instance;
+
+        private void Start()
+        {
+            Instance = this;
+        }
+
         void LoadArena()
         {
             if (!PhotonNetwork.IsMasterClient)
