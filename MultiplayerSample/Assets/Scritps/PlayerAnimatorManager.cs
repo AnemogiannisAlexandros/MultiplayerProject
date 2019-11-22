@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
+using Photon.Realtime;
 
 namespace MyMultiplayerProject
 {
-    public class PlayerAnimatorManager : MonoBehaviour
+    public class PlayerAnimatorManager : MonoBehaviourPun
     {
         [SerializeField]
         private float directionDampTime = 0.25f;
@@ -23,7 +25,10 @@ namespace MyMultiplayerProject
         // Update is called once per frame
         void Update()
         {
-
+            if (photonView.IsMine == false && PhotonNetwork.IsConnected == true) 
+            {
+                return;
+            }
             if (!animator) 
             {
                 return;

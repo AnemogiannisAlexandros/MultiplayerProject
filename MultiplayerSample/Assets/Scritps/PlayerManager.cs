@@ -9,7 +9,7 @@ namespace MyMultiplayerProject
     /// Player manager.
     /// Handles fire Input and Beams.
     /// </summary>
-    public class PlayerManager : MonoBehaviourPunCallbacks
+    public class PlayerManager : MonoBehaviourPunCallbacks,IPunObservable
     {
         #region Private Fields
 
@@ -20,8 +20,12 @@ namespace MyMultiplayerProject
         public float Health = 1f;
         //True, when the user is firing
         bool IsFiring;
+        [Tooltip("UI Prefab of our player")]
+        [SerializeField]
+        private GameObject PlayerUiPrefab;
         #endregion
 
+        public static GameObject LocalPlayerInstance;
         #region MonoBehaviour CallBacks
 
         /// <summary>
@@ -29,6 +33,11 @@ namespace MyMultiplayerProject
         /// </summary>
         void Awake()
         {
+            if (photonView.IsMine) 
+            {
+                PlayerManager.LocalPlayerInstance = this.gameObject;
+            }
+            DontDestroyOnLoad(this.gameObject);
             if (beams == null)
             {
                 Debug.LogError("<Color=Red><a>Missing</a></Color> Beams Reference.", this);
@@ -38,6 +47,37 @@ namespace MyMultiplayerProject
                 beams.SetActive(false);
             }
         }
+
+        private void Start()
+        {
+            CameraWork _cameraWork = this.gameObject.GetComponent<CameraWork>();
+
+            if (_cameraWork != null)
+            {
+                if (photonView.IsMine)
+                {
+                    _cameraWork.OnStartFollowing();
+                }
+            }
+            else 
+            {
+                Debug.LogError("<Color=Red><a>Missing</a></Color> CameraWork Component on playerPrefab.", this);
+            }
+#if UNITY_5_4_OR_NEWER
+            // Unity 5.4 has a new scene management. register a method to call CalledOnLevelWasLoaded.
+            UnityEngine.SceneManagement.SceneManager.sceneLoaded += OnSceneLoaded;
+#endif
+            if (PlayerUiPrefab != null)
+            {
+                GameObject _uiGO = Instantiate(PlayerUiPrefab);
+                _uiGO.GetComponentInChildren<PlayerUi>().SetTarget(this);
+            }
+            else 
+            {
+                Debug.LogError("Missing Prefab UI");
+            }
+        }
+
 
         /// <summary>
         /// MonoBehaviour method called on GameObject by Unity on every frame.
@@ -64,6 +104,25 @@ namespace MyMultiplayerProject
             }
         }
 
+
+#if !UNITY_5_4_OR_NEWER
+/// <summary>See CalledOnLevelWasLoaded. Outdated in Unity 5.4.</summary>
+void OnLevelWasLoaded(int level)
+{
+    this.CalledOnLevelWasLoaded(level);
+}
+#endif
+
+
+        void CalledOnLevelWasLoaded(int level)
+        {
+            // check if we are outside the Arena and if it's the case, spawn around the center of the arena in a safe zone
+            if (!Physics.Raycast(transform.position, -Vector3.up, 5f))
+            {
+                transform.position = new Vector3(0f, 5f, 0f);
+            }
+        }
+
         #endregion
         void OnTriggerEnter(Collider other)
         {
@@ -73,11 +132,11 @@ namespace MyMultiplayerProject
             }
             // We are only interested in Beamers
             // we should be using tags but for the sake of distribution, let's simply check by name.
-            if (!other.name.Contains("Beam"))
+            if (other.CompareTag("Beams") && gameObject != LocalPlayerInstance)
             {
-                return;
+                Health -= 0.1f;
             }
-            Health -= 0.1f;
+            
         }
         /// <summary>
         /// MonoBehaviour method called once per frame for every Collider 'other' that is touching the trigger.
@@ -93,12 +152,12 @@ namespace MyMultiplayerProject
             }
             // We are only interested in Beamers
             // we should be using tags but for the sake of distribution, let's simply check by name.
-            if (!other.name.Contains("Beam"))
+            if (other.CompareTag("Beams") && gameObject != LocalPlayerInstance)
             {
-                return;
+                // we slowly affect health when beam is constantly hitting us, so player has to move to prevent death.
+                Health -= 0.1f * Time.deltaTime;
             }
-            // we slowly affect health when beam is constantly hitting us, so player has to move to prevent death.
-            Health -= 0.1f * Time.deltaTime;
+           
         }
         #region Custom
 
@@ -123,6 +182,33 @@ namespace MyMultiplayerProject
             }
         }
 
+        public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+        {
+            //This is our player if true
+            if (stream.IsWriting)
+            {
+                stream.SendNext(IsFiring);
+                stream.SendNext(Health);
+            }
+            else 
+            {
+                //Network Player
+                this.IsFiring = (bool)stream.ReceiveNext();
+                this.Health = (float)stream.ReceiveNext();
+            }
+        }
+
         #endregion
+        public override void OnDisable()
+        {
+            base.OnDisable();
+            UnityEngine.SceneManagement.SceneManager.sceneLoaded += OnSceneLoaded;
+        }
+#if UNITY_5_4_OR_NEWER
+        void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode loadingMode)
+        {
+            this.CalledOnLevelWasLoaded(scene.buildIndex);
+        }
+#endif
     }
 }
