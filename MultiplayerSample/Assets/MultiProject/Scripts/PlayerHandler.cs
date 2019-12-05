@@ -8,12 +8,11 @@ public class PlayerHandler : MonoBehaviour
     [SerializeField]
     private CharacterWindow characterWindow;
 
-    public delegate void OnItemPickUp(Item item);
-
+    public Item.ItemTiers currentTier;
+    Character character;
     private void Awake()
     {
-        Character character = new Character();
-        characterWindow.SetCharacter(character);
+        character = new Character();
     }
     // Start is called before the first frame update
     void Start()
@@ -24,6 +23,10 @@ public class PlayerHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        character.GetEquippedArmor().SetItemTier(currentTier);
+    }
+    public Character GetCharacter() 
+    {
+        return character;
     }
 }

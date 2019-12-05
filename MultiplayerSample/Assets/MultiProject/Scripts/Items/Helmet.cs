@@ -8,17 +8,4 @@ public class Helmet : Item
     {
 
     }
-
-    public ItemTypes GetType() 
-    {
-        return itemType;
-    }
-    public ItemTiers GetTier() 
-    {
-        return itemTier;
-    }
-    public string GetItemName() 
-    {
-        return ItemName;
-    }
 }

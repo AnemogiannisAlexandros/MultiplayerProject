@@ -6,7 +6,7 @@ using UnityEngine;
 /// Will be the template of Every Item.
 /// </summary>
 
-public class Item : IItem
+public class Item : ScriptableObject,IItem
 {
 
     protected string ItemName;
@@ -34,5 +34,35 @@ public class Item : IItem
         this.itemTier = tier;
         this.itemType = type;
         this.ItemName = ItemName;
+    }
+
+    public ItemTiers GetItemTier()
+    {
+        return itemTier;
+    }
+
+    public ItemTypes GetItemType()
+    {
+        return itemType;
+    }
+
+    public string GetItemName()
+    {
+        return ItemName;
+    }
+
+    public void SetItemTier(ItemTiers tier)
+    {
+        itemTier = tier;
+    }
+
+    public void SetItemType(ItemTypes type)
+    {
+        itemType = type;
+    }
+
+    public void SetName(string newName)
+    {
+        ItemName = newName;
     }
 }
