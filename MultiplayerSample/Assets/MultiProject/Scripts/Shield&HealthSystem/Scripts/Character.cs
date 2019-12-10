@@ -1,4 +1,6 @@
-﻿public class Character
+﻿using UnityEngine;
+
+public class Character
 {
     
     private Armor bodyArmor;
@@ -7,9 +9,12 @@
 
     public Character()
     {
-        bodyArmor = new Armor(Item.ItemTiers.None,Item.ItemTypes.Armor,"No Equipped Armor");
-        helmet = new Helmet(Item.ItemTiers.None, Item.ItemTypes.Helmet, "No Equipped Helmet");
-        equipedWeapon = new Weapon(Item.ItemTiers.None,Item.ItemTypes.Weapon,"No Equipped Weapon");
+        bodyArmor = ScriptableObject.CreateInstance<Armor>();
+        helmet = ScriptableObject.CreateInstance<Helmet>();
+        equipedWeapon = ScriptableObject.CreateInstance<Weapon>();
+        bodyArmor.Init(Item.ItemTiers.None,"No Armor");
+        helmet.Init(Item.ItemTiers.None, "No Helmet");
+        equipedWeapon.Init(Item.ItemTiers.None, "No Weapon");
     }
     #region Getters
     public Armor GetEquippedArmor() 
@@ -27,6 +32,7 @@
     public void SetArmor(Armor armor) 
     {
         bodyArmor = armor;
+        bodyArmor.SetShieldAmount(armor.GetShieldAmount());
     }
     public void SetHelmet(Helmet helmet) 
     {

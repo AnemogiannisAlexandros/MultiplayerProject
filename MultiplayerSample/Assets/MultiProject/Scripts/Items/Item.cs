@@ -9,9 +9,11 @@ using UnityEngine;
 public class Item : ScriptableObject,IItem
 {
 
-    protected string ItemName;
-    protected ItemTypes itemType;
-    protected ItemTiers itemTier;
+
+
+    [SerializeField]protected string ItemName;
+    [SerializeField] protected ItemTypes itemType;
+    [SerializeField] protected ItemTiers itemTier;
 
     public enum ItemTiers
     {
@@ -29,13 +31,21 @@ public class Item : ScriptableObject,IItem
         Weapon
     }
 
+    public Item() 
+    {
+    }
+
     public Item(ItemTiers tier, ItemTypes type, string ItemName) 
     {
         this.itemTier = tier;
         this.itemType = type;
         this.ItemName = ItemName;
     }
-
+    public virtual void Init(ItemTiers tier,string ItemName) 
+    {
+        this.itemTier = tier;
+        this.ItemName = ItemName;
+    }
     public ItemTiers GetItemTier()
     {
         return itemTier;

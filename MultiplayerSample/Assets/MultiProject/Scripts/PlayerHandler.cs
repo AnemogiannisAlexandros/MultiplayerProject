@@ -8,7 +8,7 @@ public class PlayerHandler : MonoBehaviour
     [SerializeField]
     private CharacterWindow characterWindow;
 
-    public Item.ItemTiers currentTier;
+    //public Item.ItemTiers currentTier;
     Character character;
     private void Awake()
     {
@@ -23,7 +23,9 @@ public class PlayerHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        character.GetEquippedArmor().SetItemTier(currentTier);
+        Debug.LogFormat("Armor Name : {0} Shield Amount : {1}", character.GetEquippedArmor().GetItemName() , character.GetEquippedArmor().GetShieldAmount());
+        Debug.LogFormat("Helmet Name : {0} Damage Reduction Amount : {1}", character.GetEquippedHelmet().GetItemName(), character.GetEquippedHelmet().GetDamageReduction());
+        Debug.LogFormat("Weapon Name : {0} Damage Amount : {1}", character.GetEquippedWeapon().GetItemName(), character.GetEquippedWeapon().GetDamage());
     }
     public Character GetCharacter() 
     {

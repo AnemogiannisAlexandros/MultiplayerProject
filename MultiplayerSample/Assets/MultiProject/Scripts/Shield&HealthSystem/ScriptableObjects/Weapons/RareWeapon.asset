@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb7b47acb4184294aa8668682800675d, type: 3}
-  m_Name: CommonArmor
+  m_Script: {fileID: 11500000, guid: ad386dc40badd3f4990fd6cbc02d2999, type: 3}
+  m_Name: RareWeapon
   m_EditorClassIdentifier: 
-  tier: 1
-  itmeName: Common Armor
-  itemType: 1
-  headshotDamageReductionPercent: 25
+  ItemName: Rare Weapon
+  itemType: 2
+  itemTier: 2
+  damageOfBullets: 15

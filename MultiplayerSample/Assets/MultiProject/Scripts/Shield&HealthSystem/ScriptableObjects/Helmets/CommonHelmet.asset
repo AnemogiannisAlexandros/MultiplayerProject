@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb7b47acb4184294aa8668682800675d, type: 3}
-  m_Name: EpicArmor
+  m_Script: {fileID: 11500000, guid: a372f0f255800564796486376b045798, type: 3}
+  m_Name: CommonHelmet
   m_EditorClassIdentifier: 
-  tier: 3
-  itmeName: Epic Armor
-  itemType: 1
-  headshotDamageReductionPercent: 50
+  ItemName: Common Helmet
+  itemType: 0
+  itemTier: 1
+  damageReductionPercent: 3

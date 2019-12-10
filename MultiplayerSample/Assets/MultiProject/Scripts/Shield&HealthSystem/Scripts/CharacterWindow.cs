@@ -13,9 +13,14 @@ public class CharacterWindow : MonoBehaviour
     [SerializeField]
     private Image healthImage;
     [SerializeField]
+    private Image armorImage;
+    [SerializeField]
+    private Image helmetImage;
+    [SerializeField]
     private List<Image> shields;
     private Character character;
     Item.ItemTiers bodyArmor;
+    Item.ItemTiers helmet;
     #endregion
     #region PublicVariables
 
@@ -27,17 +32,37 @@ public class CharacterWindow : MonoBehaviour
     public void Start()
     {
         character = FindObjectOfType<PlayerHandler>().GetCharacter();
-        Debug.Log(character.GetEquippedArmor().GetItemName());
-        Debug.Log(character.GetEquippedArmor().GetItemTier());
         myBlue = new Color(.2f, .5f, .8f,1);
         myPurple = new Color(1, .3f, .9f,1);
         myOrange = new Color(1, .8f, .3f,1);
     }
-
+    public void UpdateHelmetGraphic()
+    {
+        helmet = character.GetEquippedHelmet().GetItemTier();
+        {
+            switch (helmet) 
+            {
+                case Item.ItemTiers.None:
+                    helmetImage.gameObject.SetActive(false);
+                    break;
+                case Item.ItemTiers.Common:
+                    helmetImage.color = Color.white;
+                    break;
+                case Item.ItemTiers.Rare:
+                    helmetImage.color = myBlue;
+                    break;
+                case Item.ItemTiers.Epic:
+                    helmetImage.color = myPurple;
+                    break;
+                case Item.ItemTiers.Legendary:
+                    helmetImage.color = myOrange;
+                    break;
+            }
+        }
+    }
     public void UpdateShieldSegments() 
     {
         bodyArmor = character.GetEquippedArmor().GetItemTier();
-        Debug.Log(character.GetEquippedArmor().GetItemTier());
         switch (bodyArmor) 
         {
             case Item.ItemTiers.None:
@@ -45,6 +70,8 @@ public class CharacterWindow : MonoBehaviour
                 {
                     c.gameObject.SetActive(false);
                 }
+                armorImage.gameObject.SetActive(false);
+                helmetImage.gameObject.SetActive(false);
                 break;
             case Item.ItemTiers.Common:
                 for (int i = 0; i < shields.Count; i++) 
@@ -59,6 +86,7 @@ public class CharacterWindow : MonoBehaviour
                         shields[i].gameObject.SetActive(false);
                     }
                 }
+                armorImage.color = Color.white;
                 break;
             case Item.ItemTiers.Rare:
                 for (int i = 0; i < shields.Count; i++)
@@ -72,6 +100,7 @@ public class CharacterWindow : MonoBehaviour
                     {
                         shields[i].gameObject.SetActive(false);
                     }
+                    armorImage.color = myBlue;
                 }
                 break;
             case Item.ItemTiers.Epic:
@@ -80,6 +109,7 @@ public class CharacterWindow : MonoBehaviour
                     c.gameObject.SetActive(true);
                     c.color = myPurple;
                 }
+                armorImage.color = myPurple;
                 break;
             case Item.ItemTiers.Legendary:
                 foreach (Image c in shields)
@@ -87,6 +117,7 @@ public class CharacterWindow : MonoBehaviour
                     c.gameObject.SetActive(true);
                     c.color = myOrange;
                 }
+                armorImage.color = myOrange;
                 break;
         }
     }
