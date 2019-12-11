@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using System;
 
 public class CharacterWindow : MonoBehaviour
 {
@@ -35,6 +36,31 @@ public class CharacterWindow : MonoBehaviour
         myBlue = new Color(.2f, .5f, .8f,1);
         myPurple = new Color(1, .3f, .9f,1);
         myOrange = new Color(1, .8f, .3f,1);
+        UpdateShieldSegments();
+        UpdateHelmetGraphic();
+    }
+    public void UpdatePickedItemGUI(Item item) 
+    {
+        switch (item.GetItemType()) 
+        {
+            case Item.ItemTypes.Helmet :
+                UpdateHelmetGraphic();
+                break;
+            case Item.ItemTypes.Armor:
+                UpdateShieldSegments();
+                break;
+            case Item.ItemTypes.Weapon:
+                UpdateWeaponGraphic();
+                break;
+                
+        }
+    }
+    /// <summary>
+    /// To Do : Update Weapon User Interface
+    /// </summary>
+    public void UpdateWeaponGraphic() 
+    {
+        throw new NotImplementedException();
     }
     public void UpdateHelmetGraphic()
     {
@@ -46,15 +72,19 @@ public class CharacterWindow : MonoBehaviour
                     helmetImage.gameObject.SetActive(false);
                     break;
                 case Item.ItemTiers.Common:
+                    helmetImage.gameObject.SetActive(true);
                     helmetImage.color = Color.white;
                     break;
                 case Item.ItemTiers.Rare:
+                    helmetImage.gameObject.SetActive(true);
                     helmetImage.color = myBlue;
                     break;
                 case Item.ItemTiers.Epic:
+                    helmetImage.gameObject.SetActive(true);
                     helmetImage.color = myPurple;
                     break;
                 case Item.ItemTiers.Legendary:
+                    helmetImage.gameObject.SetActive(true);
                     helmetImage.color = myOrange;
                     break;
             }
@@ -71,7 +101,6 @@ public class CharacterWindow : MonoBehaviour
                     c.gameObject.SetActive(false);
                 }
                 armorImage.gameObject.SetActive(false);
-                helmetImage.gameObject.SetActive(false);
                 break;
             case Item.ItemTiers.Common:
                 for (int i = 0; i < shields.Count; i++) 
@@ -86,6 +115,7 @@ public class CharacterWindow : MonoBehaviour
                         shields[i].gameObject.SetActive(false);
                     }
                 }
+                armorImage.gameObject.SetActive(true);
                 armorImage.color = Color.white;
                 break;
             case Item.ItemTiers.Rare:
@@ -100,6 +130,7 @@ public class CharacterWindow : MonoBehaviour
                     {
                         shields[i].gameObject.SetActive(false);
                     }
+                    armorImage.gameObject.SetActive(true);
                     armorImage.color = myBlue;
                 }
                 break;
@@ -109,6 +140,7 @@ public class CharacterWindow : MonoBehaviour
                     c.gameObject.SetActive(true);
                     c.color = myPurple;
                 }
+                armorImage.gameObject.SetActive(true);
                 armorImage.color = myPurple;
                 break;
             case Item.ItemTiers.Legendary:
@@ -117,6 +149,7 @@ public class CharacterWindow : MonoBehaviour
                     c.gameObject.SetActive(true);
                     c.color = myOrange;
                 }
+                armorImage.gameObject.SetActive(true);
                 armorImage.color = myOrange;
                 break;
         }

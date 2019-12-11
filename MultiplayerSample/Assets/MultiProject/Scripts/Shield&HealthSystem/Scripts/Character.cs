@@ -32,7 +32,6 @@ public class Character
     public void SetArmor(Armor armor) 
     {
         bodyArmor = armor;
-        bodyArmor.SetShieldAmount(armor.GetShieldAmount());
     }
     public void SetHelmet(Helmet helmet) 
     {

@@ -3108,8 +3108,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 152203708}
-        m_MethodName: UpdateShieldSegments
-        m_Mode: 1
+        m_MethodName: UpdatePickedItemGUI
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

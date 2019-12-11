@@ -5,14 +5,17 @@ using UnityEngine.Events;
 
 public class ItemHandler : MonoBehaviour
 {
-    public UnityEvent OnItemPickUp;
+   
+    public MyItemEvent OnItemPickUp;
     private Character character;
+
     private void Awake()
     {
         character = GetComponent<PlayerHandler>().GetCharacter();
     }
-    public void PickUpItem(Item item) 
+    public void PickUpItem(Item item)
     {
+
         Item.ItemTypes itemType = item.GetItemType();
         switch (itemType)
         {
@@ -26,7 +29,11 @@ public class ItemHandler : MonoBehaviour
                 character.SetWeapon((Weapon)item);
                 break;
         }
-        OnItemPickUp.Invoke();
+        OnItemPickUp.Invoke(item);
     }
+}
+[System.Serializable]
+public class MyItemEvent : UnityEvent<Item>
+{
 
 }
