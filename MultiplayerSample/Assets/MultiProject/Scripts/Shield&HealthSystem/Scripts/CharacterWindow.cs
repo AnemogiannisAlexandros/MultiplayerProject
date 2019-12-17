@@ -14,14 +14,23 @@ public class CharacterWindow : MonoBehaviour
     [SerializeField]
     private Image healthImage;
     [SerializeField]
-    private Image armorImage;
+    private Transform ArmorObj;
+    private Image armorUi;
     [SerializeField]
-    private Image helmetImage;
+    private Transform helmetObj;
+    private Image helmetUi;
     [SerializeField]
     private List<Image> shields;
+    [SerializeField]
+    private List<GameObject> shieldObjs;
+    [SerializeField]
+    private Image weaponIcon;
+    [SerializeField]
+    private GameObject weaponObj;
     private Character character;
     Item.ItemTiers bodyArmor;
     Item.ItemTiers helmet;
+    Item.ItemTiers weapon;
     #endregion
     #region PublicVariables
 
@@ -33,11 +42,18 @@ public class CharacterWindow : MonoBehaviour
     public void Start()
     {
         character = FindObjectOfType<PlayerHandler>().GetCharacter();
-        myBlue = new Color(.2f, .5f, .8f,1);
-        myPurple = new Color(1, .3f, .9f,1);
-        myOrange = new Color(1, .8f, .3f,1);
+        myBlue = new Color(.2f, .5f, .8f,.8f);
+        myPurple = new Color(1, .3f, .9f,.8f);
+        myOrange = new Color(1, .8f, .3f,.8f);
+        armorUi = ArmorObj.GetChild(0).GetComponent<Image>();
+        helmetUi = helmetObj.GetChild(0).GetComponent<Image>();
+        for (int i = 0; i < 4; i++) 
+        {
+            shields[i] = shieldObjs[i].transform.GetChild(1).GetComponent<Image>();
+        }
         UpdateShieldSegments();
         UpdateHelmetGraphic();
+        UpdateWeaponGraphic();
     }
     public void UpdatePickedItemGUI(Item item) 
     {
@@ -60,7 +76,29 @@ public class CharacterWindow : MonoBehaviour
     /// </summary>
     public void UpdateWeaponGraphic() 
     {
-        throw new NotImplementedException();
+        weapon = character.GetEquippedWeapon().GetItemTier();
+        switch (weapon) 
+        {
+            case Item.ItemTiers.None:
+                weaponObj.SetActive(false);
+                break;
+            case Item.ItemTiers.Common:
+                weaponObj.SetActive(true);
+                weaponIcon.color = Color.gray;
+                break;
+            case Item.ItemTiers.Rare:
+                weaponObj.SetActive(true);
+                weaponIcon.color = myBlue;
+                break;
+            case Item.ItemTiers.Epic:
+                weaponObj.SetActive(true);
+                weaponIcon.color = myPurple;
+                break;
+            case Item.ItemTiers.Legendary:
+                weaponObj.SetActive(true);
+                weaponIcon.color = myOrange;
+                break;
+        }
     }
     public void UpdateHelmetGraphic()
     {
@@ -69,23 +107,23 @@ public class CharacterWindow : MonoBehaviour
             switch (helmet) 
             {
                 case Item.ItemTiers.None:
-                    helmetImage.gameObject.SetActive(false);
+                    helmetObj.gameObject.SetActive(false);
                     break;
                 case Item.ItemTiers.Common:
-                    helmetImage.gameObject.SetActive(true);
-                    helmetImage.color = Color.white;
+                    helmetObj.gameObject.SetActive(true);
+                    helmetUi.color = Color.gray;
                     break;
                 case Item.ItemTiers.Rare:
-                    helmetImage.gameObject.SetActive(true);
-                    helmetImage.color = myBlue;
+                    helmetObj.gameObject.SetActive(true);
+                    helmetUi.color = myBlue;
                     break;
                 case Item.ItemTiers.Epic:
-                    helmetImage.gameObject.SetActive(true);
-                    helmetImage.color = myPurple;
+                    helmetObj.gameObject.SetActive(true);
+                    helmetUi.color = myPurple;
                     break;
                 case Item.ItemTiers.Legendary:
-                    helmetImage.gameObject.SetActive(true);
-                    helmetImage.color = myOrange;
+                    helmetObj.gameObject.SetActive(true);
+                    helmetUi.color = myOrange;
                     break;
             }
         }
@@ -96,61 +134,61 @@ public class CharacterWindow : MonoBehaviour
         switch (bodyArmor) 
         {
             case Item.ItemTiers.None:
-                foreach (Image c in shields) 
+                for(int i = 0;i<shieldObjs.Count;i++) 
                 {
-                    c.gameObject.SetActive(false);
+                    shieldObjs[i].SetActive(false);
                 }
-                armorImage.gameObject.SetActive(false);
+                ArmorObj.gameObject.SetActive(false);
                 break;
             case Item.ItemTiers.Common:
-                for (int i = 0; i < shields.Count; i++) 
+                for (int i = 0; i < shieldObjs.Count; i++) 
                 {
                     if (i < 2)
                     {
-                        shields[i].gameObject.SetActive(true);
+                        shieldObjs[i].SetActive(true);
                         shields[i].color = Color.white;
                     }
                     else 
                     {
-                        shields[i].gameObject.SetActive(false);
+                        shieldObjs[i].SetActive(false);
                     }
                 }
-                armorImage.gameObject.SetActive(true);
-                armorImage.color = Color.white;
+                ArmorObj.gameObject.SetActive(true);
+                armorUi.color = Color.grey;
                 break;
             case Item.ItemTiers.Rare:
                 for (int i = 0; i < shields.Count; i++)
                 {
                     if (i < 3)
                     {
-                        shields[i].gameObject.SetActive(true);
+                        shieldObjs[i].SetActive(true);
                         shields[i].color = myBlue;
                     }
                     else
                     {
-                        shields[i].gameObject.SetActive(false);
+                        shieldObjs[i].SetActive(false);
                     }
-                    armorImage.gameObject.SetActive(true);
-                    armorImage.color = myBlue;
+                    ArmorObj.gameObject.SetActive(true);
+                    armorUi.color = myBlue;
                 }
                 break;
             case Item.ItemTiers.Epic:
-                foreach (Image c in shields)
+                for(int i=0;i<shieldObjs.Count;i++)
                 {
-                    c.gameObject.SetActive(true);
-                    c.color = myPurple;
+                    shieldObjs[i].SetActive(true);
+                    shields[i].color = myPurple;
                 }
-                armorImage.gameObject.SetActive(true);
-                armorImage.color = myPurple;
+                ArmorObj.gameObject.SetActive(true);
+                armorUi.color = myPurple;
                 break;
             case Item.ItemTiers.Legendary:
-                foreach (Image c in shields)
+                for (int i = 0; i < shieldObjs.Count; i++)
                 {
-                    c.gameObject.SetActive(true);
-                    c.color = myOrange;
+                    shieldObjs[i].SetActive(true);
+                    shields[i].color = myOrange;
                 }
-                armorImage.gameObject.SetActive(true);
-                armorImage.color = myOrange;
+                ArmorObj.gameObject.SetActive(true);
+                armorUi.color = myOrange;
                 break;
         }
     }
