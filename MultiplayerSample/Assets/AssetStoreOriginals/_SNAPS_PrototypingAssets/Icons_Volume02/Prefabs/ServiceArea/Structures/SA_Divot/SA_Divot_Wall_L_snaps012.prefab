@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7258326985310042131}
   - component: {fileID: 7258326985310042128}
   m_Layer: 0
-  m_Name: SA_Divot_Wall_L
+  m_Name: SA_Divot_Wall_L_snaps012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

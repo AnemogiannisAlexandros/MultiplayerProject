@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2274336075199207524}
   - component: {fileID: 1155864597096101520}
   m_Layer: 0
-  m_Name: SA_Ladder_5m
+  m_Name: SA_Ladder_5m_snaps012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

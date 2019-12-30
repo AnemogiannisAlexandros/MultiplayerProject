@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3487788876053721585}
   - component: {fileID: 1207842861635353317}
   m_Layer: 0
-  m_Name: SA_MetalSupport_X
+  m_Name: SA_MetalSupport_X_snaps012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

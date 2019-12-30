@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1323130224321576075}
   - component: {fileID: 379467412200645484}
   m_Layer: 0
-  m_Name: Pod_CocoonAtachment
+  m_Name: Pod_CocoonAtachment_snaps012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1138,17 +1138,9 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_IsSelectable: 1
-  m_SelectedFaces: 17000000
-  m_SelectedEdges:
-  - a: 93
-    b: 92
-  - a: 92
-    b: 94
-  - a: 94
-    b: 95
-  - a: 95
-    b: 93
-  m_SelectedVertices: 5e0000005d0000005c0000005f000000
+  m_SelectedFaces: 
+  m_SelectedEdges: []
+  m_SelectedVertices: 
 --- !u!64 &379467412200645484
 MeshCollider:
   m_ObjectHideFlags: 0

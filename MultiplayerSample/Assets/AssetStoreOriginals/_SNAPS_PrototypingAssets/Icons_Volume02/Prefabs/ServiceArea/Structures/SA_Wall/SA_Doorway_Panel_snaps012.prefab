@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4883515377344059150}
   - component: {fileID: 7308812665424528525}
   m_Layer: 0
-  m_Name: SA_Doorway_Panel
+  m_Name: SA_Doorway_Panel_snaps012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4479,17 +4479,9 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_IsSelectable: 1
-  m_SelectedFaces: 3f000000
-  m_SelectedEdges:
-  - a: 266
-    b: 269
-  - a: 269
-    b: 268
-  - a: 267
-    b: 266
-  - a: 268
-    b: 267
-  m_SelectedVertices: 0a0100000d0100000c0100000b010000
+  m_SelectedFaces: 
+  m_SelectedEdges: []
+  m_SelectedVertices: 
 --- !u!64 &7308812665424528525
 MeshCollider:
   m_ObjectHideFlags: 0

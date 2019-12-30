@@ -28,7 +28,7 @@ GameObject:
   - component: {fileID: 7099783579569474595}
   - component: {fileID: 3314646698071352608}
   m_Layer: 0
-  m_Name: Pod_Arm
+  m_Name: Pod_Arm_snaps012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11151,10 +11151,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3505202727429012809}
     m_Modifications:
-    - target: {fileID: 7988076832685605376, guid: 1e5661f50fb6e884da19fdfe8c33112c,
+    - target: {fileID: 379467412200645484, guid: 1e5661f50fb6e884da19fdfe8c33112c,
         type: 3}
-      propertyPath: m_Name
-      value: Pod_CocoonAtachment
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3695272506716600943, guid: 1e5661f50fb6e884da19fdfe8c33112c,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7155497688722247822, guid: 1e5661f50fb6e884da19fdfe8c33112c,
         type: 3}
@@ -11211,6 +11216,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7988076832685605376, guid: 1e5661f50fb6e884da19fdfe8c33112c,
+        type: 3}
+      propertyPath: m_Name
+      value: Pod_CocoonAtachment
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e5661f50fb6e884da19fdfe8c33112c, type: 3}
 --- !u!1 &7988076832665018521 stripped
@@ -11236,6 +11246,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pod_Arm_L_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4832341061256699616, guid: 1fb6fec816efe0c43be922546e1e5547,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6151252296543819106, guid: 1fb6fec816efe0c43be922546e1e5547,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8637756596404821282, guid: 1fb6fec816efe0c43be922546e1e5547,
         type: 3}
@@ -11294,15 +11314,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fb6fec816efe0c43be922546e1e5547, type: 3}
---- !u!1 &1583599906490046292 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1583599906434972485, guid: 1fb6fec816efe0c43be922546e1e5547,
-    type: 3}
-  m_PrefabInstance: {fileID: 97233937}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8637756596475441459 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8637756596404821282, guid: 1fb6fec816efe0c43be922546e1e5547,
+    type: 3}
+  m_PrefabInstance: {fileID: 97233937}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1583599906490046292 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1583599906434972485, guid: 1fb6fec816efe0c43be922546e1e5547,
     type: 3}
   m_PrefabInstance: {fileID: 97233937}
   m_PrefabAsset: {fileID: 0}
@@ -11313,11 +11333,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3505202727429012809}
     m_Modifications:
-    - target: {fileID: 4863034463763165387, guid: 71085c733bcf39343b9e95db18bda4e2,
-        type: 3}
-      propertyPath: m_Name
-      value: Pod_Arm_L_01
-      objectReference: {fileID: 0}
     - target: {fileID: 1156394837277968797, guid: 71085c733bcf39343b9e95db18bda4e2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11388,6 +11403,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.0000001
       objectReference: {fileID: 0}
+    - target: {fileID: 4863034463763165387, guid: 71085c733bcf39343b9e95db18bda4e2,
+        type: 3}
+      propertyPath: m_Name
+      value: Pod_Arm_L_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739747345309119085, guid: 71085c733bcf39343b9e95db18bda4e2,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7823989299529339425, guid: 71085c733bcf39343b9e95db18bda4e2,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71085c733bcf39343b9e95db18bda4e2, type: 3}
 --- !u!4 &1156394837190889472 stripped
@@ -11409,10 +11439,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3505202727429012809}
     m_Modifications:
-    - target: {fileID: 6958690747236466203, guid: 42876b19afd95bc4b9e1ecb7078881be,
+    - target: {fileID: 1129140558964499937, guid: 42876b19afd95bc4b9e1ecb7078881be,
         type: 3}
-      propertyPath: m_Name
-      value: Pod_Arm_R_01
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4493494147239439942, guid: 42876b19afd95bc4b9e1ecb7078881be,
         type: 3}
@@ -11484,6 +11514,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.0000004
       objectReference: {fileID: 0}
+    - target: {fileID: 6958690747236466203, guid: 42876b19afd95bc4b9e1ecb7078881be,
+        type: 3}
+      propertyPath: m_Name
+      value: Pod_Arm_R_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151696107705012610, guid: 42876b19afd95bc4b9e1ecb7078881be,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42876b19afd95bc4b9e1ecb7078881be, type: 3}
 --- !u!1 &6958690747475576776 stripped
@@ -11505,6 +11545,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3505202727429012809}
     m_Modifications:
+    - target: {fileID: 2287159515583594554, guid: 8b2e56144c2263e499c0adb5fba95e16,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3293258553143306196, guid: 8b2e56144c2263e499c0adb5fba95e16,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4327929334268809825, guid: 8b2e56144c2263e499c0adb5fba95e16,
         type: 3}
       propertyPath: m_Name
@@ -11646,6 +11696,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5677543252823224037, guid: 92e91e58b0f371b48b5c7edd6ff96e06,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8813247963854556594, guid: 92e91e58b0f371b48b5c7edd6ff96e06,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92e91e58b0f371b48b5c7edd6ff96e06, type: 3}
 --- !u!1 &164318851619478790 stripped
@@ -11665,6 +11725,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pod_Arm_R_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284910913534326979, guid: e66ebf52ae500c540826e171cc84a0a2,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8398998974513387077, guid: e66ebf52ae500c540826e171cc84a0a2,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8970830172975190646, guid: e66ebf52ae500c540826e171cc84a0a2,
         type: 3}
@@ -11752,10 +11822,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3505202727429012809}
     m_Modifications:
-    - target: {fileID: 6895660560354797752, guid: aba31c053b847fa49a459e902d456dd4,
+    - target: {fileID: 1337652700767534409, guid: aba31c053b847fa49a459e902d456dd4,
         type: 3}
-      propertyPath: m_Name
-      value: Pod_Arm_R_03
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4025701787625996008, guid: aba31c053b847fa49a459e902d456dd4,
         type: 3}
@@ -11817,17 +11887,27 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.9999999
       objectReference: {fileID: 0}
+    - target: {fileID: 6895660560354797752, guid: aba31c053b847fa49a459e902d456dd4,
+        type: 3}
+      propertyPath: m_Name
+      value: Pod_Arm_R_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 8445850129119048117, guid: aba31c053b847fa49a459e902d456dd4,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aba31c053b847fa49a459e902d456dd4, type: 3}
---- !u!4 &4025701787659589904 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4025701787625996008, guid: aba31c053b847fa49a459e902d456dd4,
-    type: 3}
-  m_PrefabInstance: {fileID: 1040246776}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6895660559851491136 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6895660560354797752, guid: aba31c053b847fa49a459e902d456dd4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1040246776}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4025701787659589904 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4025701787625996008, guid: aba31c053b847fa49a459e902d456dd4,
     type: 3}
   m_PrefabInstance: {fileID: 1040246776}
   m_PrefabAsset: {fileID: 0}
@@ -11838,10 +11918,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3505202727429012809}
     m_Modifications:
-    - target: {fileID: 7004161487090058602, guid: 43bf86676cba4aa41b1bb6a04b2fbe9a,
+    - target: {fileID: 3856622988301499171, guid: 43bf86676cba4aa41b1bb6a04b2fbe9a,
         type: 3}
-      propertyPath: m_Name
-      value: Pod_Arm_L_03
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5425172311814152558, guid: 43bf86676cba4aa41b1bb6a04b2fbe9a,
         type: 3}
@@ -11907,6 +11987,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.0000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 6380466961951004395, guid: 43bf86676cba4aa41b1bb6a04b2fbe9a,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7004161487090058602, guid: 43bf86676cba4aa41b1bb6a04b2fbe9a,
+        type: 3}
+      propertyPath: m_Name
+      value: Pod_Arm_L_03
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43bf86676cba4aa41b1bb6a04b2fbe9a, type: 3}

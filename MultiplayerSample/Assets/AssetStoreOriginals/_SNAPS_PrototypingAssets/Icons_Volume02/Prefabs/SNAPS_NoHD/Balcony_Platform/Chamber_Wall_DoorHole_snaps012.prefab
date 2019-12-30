@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5279305990410651171}
   - component: {fileID: 1330790462}
   m_Layer: 0
-  m_Name: Chamber_Wall_DoorHole
+  m_Name: Chamber_Wall_DoorHole_snaps012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

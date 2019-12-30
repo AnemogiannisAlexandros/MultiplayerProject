@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 96261442190522673}
   - component: {fileID: 670598244}
   m_Layer: 0
-  m_Name: Chamber_Wall_Balcone
+  m_Name: Chamber_Wall_Balcone_snaps012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

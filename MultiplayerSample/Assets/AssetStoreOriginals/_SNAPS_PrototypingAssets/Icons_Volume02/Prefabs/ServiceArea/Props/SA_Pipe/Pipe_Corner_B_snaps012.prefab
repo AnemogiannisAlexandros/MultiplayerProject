@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5081122287169255437}
   - component: {fileID: 2795660741395701579}
   m_Layer: 0
-  m_Name: Pipe_Corner_B
+  m_Name: Pipe_Corner_B_snaps012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2937,7 +2937,7 @@ MonoBehaviour:
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
-  m_SelectedVertices: b0000000bf000000
+  m_SelectedVertices: 
 --- !u!64 &2795660741395701579
 MeshCollider:
   m_ObjectHideFlags: 0

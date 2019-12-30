@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8660498938125851684}
   - component: {fileID: 5147702080134945525}
   m_Layer: 0
-  m_Name: SA_MetalSupport_Railing_4m
+  m_Name: SA_MetalSupport_Railing_4m_snaps012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

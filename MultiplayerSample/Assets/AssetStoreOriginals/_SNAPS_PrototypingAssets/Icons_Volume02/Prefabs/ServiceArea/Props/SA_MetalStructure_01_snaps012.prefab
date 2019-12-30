@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3575213547443987449}
   - component: {fileID: 6716437120526793608}
   m_Layer: 0
-  m_Name: SA_MetalStructure_01
+  m_Name: SA_MetalStructure_01_snaps012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

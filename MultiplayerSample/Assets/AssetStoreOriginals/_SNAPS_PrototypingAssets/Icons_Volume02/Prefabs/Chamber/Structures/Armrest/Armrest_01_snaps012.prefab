@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 326727749266232552}
   - component: {fileID: 1453364402}
   m_Layer: 0
-  m_Name: Armrest_01
+  m_Name: Armrest_01_snaps012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

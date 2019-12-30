@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 194642168407712816}
   - component: {fileID: 3510180544307497980}
   m_Layer: 0
-  m_Name: CapsulePlatform_Door_Bottom
+  m_Name: CapsulePlatform_Door_Bottom_snaps012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

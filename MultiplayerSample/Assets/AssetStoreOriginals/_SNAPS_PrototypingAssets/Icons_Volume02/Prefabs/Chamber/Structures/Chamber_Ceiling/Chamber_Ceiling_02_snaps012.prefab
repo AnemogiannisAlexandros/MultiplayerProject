@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5843776970775127870}
   - component: {fileID: 1078293514}
   m_Layer: 0
-  m_Name: Chamber_Ceiling_02
+  m_Name: Chamber_Ceiling_02_snaps012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6695,13 +6695,13 @@ MonoBehaviour:
   - {x: -1, y: 0, z: 0, w: -1}
   - {x: -1, y: 0, z: 0, w: -1}
   - {x: -1, y: 0, z: 0, w: -1}
-  - {x: NaN, y: NaN, z: NaN, w: -1}
-  - {x: NaN, y: NaN, z: NaN, w: -1}
-  - {x: NaN, y: NaN, z: NaN, w: -1}
-  - {x: NaN, y: NaN, z: NaN, w: -1}
-  - {x: NaN, y: NaN, z: NaN, w: -1}
-  - {x: NaN, y: NaN, z: NaN, w: -1}
-  - {x: NaN, y: NaN, z: NaN, w: -1}
+  - {x: 1, y: 0, z: 0, w: -1}
+  - {x: 1, y: 0, z: 0, w: -1}
+  - {x: 1, y: 0, z: 0, w: -1}
+  - {x: 1, y: 0, z: 0, w: -1}
+  - {x: 1, y: 0, z: 0, w: -1}
+  - {x: 1, y: 0, z: 0, w: -1}
+  - {x: 1, y: 0, z: 0, w: -1}
   - {x: 0, y: 0, z: 1, w: -1}
   - {x: 0, y: 0, z: 1, w: -1}
   - {x: 0, y: 0, z: 1, w: -1}
@@ -6813,9 +6813,9 @@ MonoBehaviour:
   - {x: 1, y: 0, z: 0, w: -1}
   - {x: 1, y: 0, z: 0, w: -1}
   - {x: 1, y: 0, z: 0, w: -1}
-  - {x: NaN, y: NaN, z: NaN, w: -1}
-  - {x: NaN, y: NaN, z: NaN, w: -1}
-  - {x: NaN, y: NaN, z: NaN, w: -1}
+  - {x: 1, y: 0, z: 0, w: -1}
+  - {x: 1, y: 0, z: 0, w: -1}
+  - {x: 1, y: 0, z: 0, w: -1}
   - {x: 1, y: 0, z: 0, w: -1}
   - {x: -1, y: 0, z: -0.00000203097, w: -1}
   - {x: -1, y: 0, z: -0.000002096481, w: -1}
@@ -7011,10 +7011,10 @@ MonoBehaviour:
   - {x: 0, y: 0, z: -1, w: -1}
   - {x: 0, y: 0, z: -1, w: -1}
   - {x: -1, y: 0, z: 0, w: -1}
-  - {x: NaN, y: NaN, z: NaN, w: -1}
-  - {x: NaN, y: NaN, z: NaN, w: -1}
-  - {x: NaN, y: NaN, z: NaN, w: -1}
-  - {x: NaN, y: NaN, z: NaN, w: -1}
+  - {x: -1, y: 0, z: 0, w: -1}
+  - {x: -1, y: 0, z: 0, w: -1}
+  - {x: 1, y: 0, z: 0, w: -1}
+  - {x: 1, y: 0, z: 0, w: -1}
   - {x: 1, y: 0, z: 0, w: -1}
   - {x: 1, y: 0, z: 0, w: -1}
   - {x: 0, y: 0, z: 1, w: -1}
@@ -7149,10 +7149,10 @@ MonoBehaviour:
   - {x: -1, y: -0.000000019596083, z: 0.000001175765, w: -1}
   - {x: -1, y: -0.000000015013928, z: 0.00000090083574, w: -1}
   - {x: 1, y: 0, z: 0, w: -1}
-  - {x: NaN, y: NaN, z: NaN, w: -1}
-  - {x: NaN, y: NaN, z: NaN, w: -1}
   - {x: 1, y: 0, z: 0, w: -1}
-  - {x: NaN, y: NaN, z: NaN, w: -1}
+  - {x: 1, y: 0, z: 0, w: -1}
+  - {x: 1, y: 0, z: 0, w: -1}
+  - {x: -1, y: 0, z: 0, w: -1}
   - {x: -1, y: 0, z: 0, w: -1}
   - {x: -1, y: 0, z: 0, w: -1}
   - {x: -1, y: 0, z: 0, w: -1}
@@ -7190,22 +7190,22 @@ MonoBehaviour:
   - {x: -1, y: 0, z: -0.000004874315, w: -1}
   - {x: -1, y: 0, z: -0.0000030267977, w: -1}
   - {x: -1, y: 0, z: -0.00000117928, w: -1}
-  - {x: NaN, y: NaN, z: NaN, w: -1}
-  - {x: NaN, y: NaN, z: NaN, w: -1}
-  - {x: NaN, y: NaN, z: NaN, w: -1}
-  - {x: NaN, y: NaN, z: NaN, w: -1}
+  - {x: -1, y: 0, z: 0.0000012185914, w: -1}
+  - {x: -1, y: 0, z: 0, w: -1}
+  - {x: -1, y: 0, z: 0.0000012185914, w: -1}
+  - {x: -1, y: 0, z: 0.0000024371825, w: -1}
   - {x: -1, y: 0, z: 0.00001325085, w: -1}
   - {x: -1, y: 0, z: 0.00001325085, w: -1}
   - {x: -1, y: 0, z: 0.00001325085, w: -1}
   - {x: -1, y: 0, z: 0, w: -1}
-  - {x: NaN, y: NaN, z: NaN, w: -1}
   - {x: -1, y: 0, z: 0, w: -1}
-  - {x: NaN, y: NaN, z: NaN, w: -1}
-  - {x: NaN, y: NaN, z: NaN, w: -1}
-  - {x: NaN, y: NaN, z: NaN, w: -1}
   - {x: -1, y: 0, z: 0, w: -1}
-  - {x: NaN, y: NaN, z: NaN, w: -1}
-  - {x: NaN, y: NaN, z: NaN, w: -1}
+  - {x: -1, y: 0, z: 0, w: -1}
+  - {x: -1, y: 0, z: 0, w: -1}
+  - {x: -1, y: 0, z: 0, w: -1}
+  - {x: -1, y: 0, z: 0, w: -1}
+  - {x: -1, y: 0, z: 0, w: -1}
+  - {x: 0, y: 0, z: -1, w: -1}
   - {x: 0, y: 0, z: -1, w: -1}
   - {x: 0, y: 0, z: -1, w: -1}
   - {x: 0, y: 0, z: -1, w: -1}
@@ -7311,10 +7311,10 @@ MonoBehaviour:
   - {x: -1, y: 0, z: 0, w: -1}
   - {x: -1, y: 0, z: 0, w: -1}
   - {x: -1, y: 0, z: 0, w: -1}
-  - {x: NaN, y: NaN, z: NaN, w: -1}
+  - {x: -1, y: 0, z: 0, w: -1}
   - {x: -1, y: 0, z: 0.000008350299, w: -1}
-  - {x: NaN, y: NaN, z: NaN, w: -1}
-  - {x: NaN, y: NaN, z: NaN, w: -1}
+  - {x: -1, y: 0, z: 0.000008350299, w: -1}
+  - {x: -1, y: 0, z: 0.000008350299, w: -1}
   - {x: -1, y: 0, z: 0, w: -1}
   - {x: -1, y: 0, z: 0, w: -1}
   - {x: -1, y: 0, z: 0, w: -1}
@@ -7352,9 +7352,9 @@ MonoBehaviour:
   - {x: -1, y: 0, z: 0, w: -1}
   - {x: -1, y: 0, z: 0, w: -1}
   - {x: -1, y: 0, z: 0, w: -1}
-  - {x: NaN, y: NaN, z: NaN, w: -1}
-  - {x: NaN, y: NaN, z: NaN, w: -1}
-  - {x: NaN, y: NaN, z: NaN, w: -1}
+  - {x: -1, y: 0, z: 0, w: -1}
+  - {x: -1, y: 0, z: 0, w: -1}
+  - {x: -1, y: 0, z: 0, w: -1}
   - {x: -1, y: 0, z: 0, w: -1}
   - {x: -1, y: 0, z: 0, w: -1}
   - {x: 0, y: 0, z: -1, w: -1}

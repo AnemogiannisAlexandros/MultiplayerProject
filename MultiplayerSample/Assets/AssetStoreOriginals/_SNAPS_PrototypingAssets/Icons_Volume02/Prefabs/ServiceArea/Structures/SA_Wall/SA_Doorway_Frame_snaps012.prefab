@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4274946337062651234}
   - component: {fileID: 5337317955284602102}
   m_Layer: 0
-  m_Name: SA_Doorway_Frame
+  m_Name: SA_Doorway_Frame_snaps012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

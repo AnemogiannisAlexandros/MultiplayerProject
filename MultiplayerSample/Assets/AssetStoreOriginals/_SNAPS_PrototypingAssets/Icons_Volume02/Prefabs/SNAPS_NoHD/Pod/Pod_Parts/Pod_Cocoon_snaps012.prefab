@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2919346447053407071}
   - component: {fileID: 5677543252823224037}
   m_Layer: 0
-  m_Name: Pod_Cocoon
+  m_Name: Pod_Cocoon_snaps012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

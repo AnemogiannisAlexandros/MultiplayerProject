@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3336580303021694838}
   - component: {fileID: 3336580303021694839}
   m_Layer: 0
-  m_Name: Chamber_Wall_02
+  m_Name: Chamber_Wall_02_snaps012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

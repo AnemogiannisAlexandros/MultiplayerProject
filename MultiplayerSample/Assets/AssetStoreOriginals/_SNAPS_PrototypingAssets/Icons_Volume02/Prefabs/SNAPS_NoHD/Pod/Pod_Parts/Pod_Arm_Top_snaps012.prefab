@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 594909198890469857}
   - component: {fileID: 3293258553143306196}
   m_Layer: 0
-  m_Name: Pod_Arm_Top
+  m_Name: Pod_Arm_Top_snaps012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2593,21 +2593,9 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_IsSelectable: 1
-  m_SelectedFaces: 3c000000
-  m_SelectedEdges:
-  - a: 235
-    b: 234
-  - a: 236
-    b: 235
-  - a: 237
-    b: 236
-  - a: 234
-    b: 233
-  - a: 233
-    b: 232
-  - a: 232
-    b: 237
-  m_SelectedVertices: eb000000ea000000ec000000ed000000e9000000e8000000
+  m_SelectedFaces: 
+  m_SelectedEdges: []
+  m_SelectedVertices: 
 --- !u!64 &3293258553143306196
 MeshCollider:
   m_ObjectHideFlags: 0

@@ -7753,7 +7753,7 @@ MonoBehaviour:
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
-  m_SelectedVertices: 27020000
+  m_SelectedVertices: 
 --- !u!64 &3908794648505090583
 MeshCollider:
   m_ObjectHideFlags: 0
