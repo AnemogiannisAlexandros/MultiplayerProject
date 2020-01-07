@@ -55,6 +55,10 @@ public class CharacterWindow : MonoBehaviour
         UpdateHelmetGraphic();
         UpdateWeaponGraphic();
     }
+    /// <summary>
+    /// Runs the Appropriate function based on the Type of item we picked up
+    /// </summary>
+    /// <param name="item"></param>
     public void UpdatePickedItemGUI(Item item) 
     {
         switch (item.GetItemType()) 
@@ -71,9 +75,9 @@ public class CharacterWindow : MonoBehaviour
                 
         }
     }
-    /// <summary>
-    /// To Do : Update Weapon User Interface
-    /// </summary>
+/// <summary>
+/// Updates the Weapon Graphin in the UI.
+/// </summary>
     public void UpdateWeaponGraphic() 
     {
         weapon = character.GetEquippedWeapon().GetItemTier();
@@ -100,6 +104,9 @@ public class CharacterWindow : MonoBehaviour
                 break;
         }
     }
+    /// <summary>
+    /// Updates the Helmet Graphin in the UI
+    /// </summary>
     public void UpdateHelmetGraphic()
     {
         helmet = character.GetEquippedHelmet().GetItemTier();
@@ -128,6 +135,9 @@ public class CharacterWindow : MonoBehaviour
             }
         }
     }
+    /// <summary>
+    /// Updates Shield Segments on the UI
+    /// </summary>
     public void UpdateShieldSegments() 
     {
         bodyArmor = character.GetEquippedArmor().GetItemTier();

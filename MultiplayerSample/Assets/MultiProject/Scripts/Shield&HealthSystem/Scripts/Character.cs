@@ -29,20 +29,20 @@ public class Character
     {
         return equipedWeapon;
     }
-    public void SetArmor(Armor armor) 
+
+    #endregion
+    #region Setters
+    public void SetArmor(Armor armor)
     {
         bodyArmor = armor;
     }
-    public void SetHelmet(Helmet helmet) 
+    public void SetHelmet(Helmet helmet)
     {
         this.helmet = helmet;
     }
-    public void SetWeapon(Weapon weapon) 
+    public void SetWeapon(Weapon weapon)
     {
         equipedWeapon = weapon;
     }
-    #endregion
-    #region Setters
-
     #endregion
 }

@@ -10,6 +10,7 @@ namespace MyMultiplayerProject
     public class GameManager : MonoBehaviourPunCallbacks
     {
         #region Private Methods
+        //Loads the Appropriate Level for the multiplayer
         void LoadArena()
         {
             if (!PhotonNetwork.IsMasterClient)
@@ -24,6 +25,7 @@ namespace MyMultiplayerProject
 
         #region Photon Callbacks
 
+        //When the palyer entered a valid Room.
         public override void OnPlayerEnteredRoom(Player other)
         {
             Debug.LogFormat("OnPlayerEnteredRoom() {0}", other.NickName); // not seen if you're the player connecting
@@ -38,7 +40,7 @@ namespace MyMultiplayerProject
             }
         }
 
-
+        //When some player left the Room
         public override void OnPlayerLeftRoom(Player other)
         {
             Debug.LogFormat("OnPlayerLeftRoom() {0}", other.NickName); // seen when other disconnects
@@ -67,7 +69,7 @@ namespace MyMultiplayerProject
 
         #region Public Methods
 
-
+        //Leave current Room.
         public void LeaveRoom()
         {
             PhotonNetwork.LeaveRoom();

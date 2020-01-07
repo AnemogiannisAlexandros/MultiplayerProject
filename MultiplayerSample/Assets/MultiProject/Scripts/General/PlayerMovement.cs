@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float m_RunSpeed = 11.0f;
 
-    [Tooltip("If true, diagonal speed (when strafing + moving forward or back) can't exceed normal move speed; otherwise it's about 1.4 times faster.")]
+    [Tooltip("If true, diagonal speed (when strafing + moving forward or back) can't exceed normal move speed")]
     [SerializeField]
     public bool m_LimitDiagonalSpeed = true;
 
@@ -49,7 +49,10 @@ public class PlayerMovement : MonoBehaviour
     [Tooltip("If checked, then the player can change direction while in the air.")]
     [SerializeField]
     private bool m_AirControl = false;
+    [Tooltip("How fast the player moves when he is in the air")]
 
+    [SerializeField]
+    private float m_AirSpeed = 3;
     [Tooltip("Small amounts of this results in bumping when walking down slopes, but large amounts results in falling too fast.")]
     [SerializeField]
     private float m_AntiBumpFactor = .75f;
@@ -193,7 +196,6 @@ public class PlayerMovement : MonoBehaviour
 
         // Apply gravity
         m_MoveDirection.y -= m_Gravity * Time.deltaTime;
-
         // Move the controller, and set grounded true or false depending on whether we're standing on something
         m_Grounded = (m_Controller.Move(m_MoveDirection * Time.deltaTime) & CollisionFlags.Below) != 0;
     }
