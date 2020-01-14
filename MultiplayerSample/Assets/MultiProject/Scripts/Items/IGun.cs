@@ -8,4 +8,5 @@ public interface IGun
     void CalculateSpread(float spread);
     void CalculateRecoil(float recoil);
     void Reload();
+    float CalculateFireRate();
 }
